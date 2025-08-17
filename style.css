@@ -1,0 +1,104 @@
+:root{
+  --bg: #0f1724;
+  --card: #111827;
+  --accent: #7dd3fc;
+  --text: #e6eef8;
+  --muted: #98a2b3;
+}
+*{box-sizing:border-box}
+body{
+  background: linear-gradient(180deg,#071028 0%, #0f1724 100%);
+  color:var(--text);
+  font-family: Inter, Roboto, Arial, sans-serif;
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.wrap{width:100%; max-width:760px}
+h1{margin:0 0 12px 0; text-align:center}
+.card{
+  background: rgba(255,255,255,0.03);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.output input{
+  width:100%;
+  padding:14px;
+  border-radius:8px;
+  border: none;
+  background: rgba(255,255,255,0.02);
+  color:var(--text);
+  font-size:16px;
+}
+.buttons-row{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+}
+button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  background: linear-gradient(90deg,var(--accent),#60a5fa);
+  color:#022;
+  font-weight:600;
+}
+button:disabled{
+  opacity:0.5;
+  cursor:not-allowed
+}
+.controls{margin-top:14px}
+.controls label{
+  display:block;
+  margin-bottom:10px;
+  color:var(--muted)
+}
+.controls input[type="range"]{
+  width:100%;
+  margin-top:6px
+}
+.checkboxes{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+  margin-top:8px
+}
+.checkboxes label{
+  font-size:14px;
+  color:var(--text)
+}
+.meta{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  color:var(--muted)
+}
+footer{
+  margin-top:12px;
+  text-align:center;
+  color:var(--muted)
+}
+
+/* 📱 Адаптивная версия */
+@media (max-width: 600px) {
+  .buttons-row {
+    flex-direction: column;
+  }
+  .buttons-row button {
+    width: 100%;
+  }
+  .checkboxes {
+    grid-template-columns: 1fr;
+  }
+  .meta {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
